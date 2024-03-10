@@ -1,0 +1,20 @@
+{
+  "version": "5",
+  "dialect": "pg",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1710068839955,
+      "tag": "0000_handy_inhumans",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1710068850512,
+      "tag": "0001_uneven_wallow",
+      "breakpoints": true
+    }
+  ]
+}
