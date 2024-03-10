@@ -1,3 +1,4 @@
+import { env } from "bun";
 import { Elysia } from "elysia"
 
 const app = new Elysia()
@@ -5,7 +6,7 @@ const app = new Elysia()
         return "Hello world!"
     })
 
-app.listen(3001, () => {
-    console.log("Server running!");
+app.listen(`${env.APP_PORT}`, () => {
+    console.log(`🚀 Server running in port ${env.APP_PORT}`);
 
 })
