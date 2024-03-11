@@ -15,6 +15,20 @@
       "when": 1710068850512,
       "tag": "0001_uneven_wallow",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1710159069374,
+      "tag": "0002_classy_screwball",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1710159172127,
+      "tag": "0003_calm_rafael_vega",
+      "breakpoints": true
     }
   ]
 }
