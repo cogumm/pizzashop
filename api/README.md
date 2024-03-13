@@ -9,13 +9,17 @@ bun install
 To run:
 
 ```bash
-bun run index.ts
+bun dev
 ```
-
-This project was created using `bun init` in bun v1.0.30. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
 
 ## Docker
 
+Start database docker.
 ```bash
-docker compose up -d
+docker compose --env-file .env.local up -d
+```
+
+To disconnect, simply use the following command:
+```bash
+docker compose down
 ```

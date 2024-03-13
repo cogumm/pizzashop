@@ -8,7 +8,7 @@ services:
     ports:
       - 5432:5432
     volumes:
-      - postgres_data:/bitnami/postgresql
+      - pizzashop_pg_data:/bitnami/postgresql
 
 volumes:
-  postgres_data:
+  pizzashop_pg_data:

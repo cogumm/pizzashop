@@ -1,5 +1,6 @@
-import { env } from "bun";
 import { Elysia } from "elysia"
+import chalk from "chalk";
+import { env } from "../env";
 
 const app = new Elysia()
     .get("/", () => {
@@ -7,6 +8,5 @@ const app = new Elysia()
     })
 
 app.listen(`${env.APP_PORT}`, () => {
-    console.log(`🚀 Server running in port ${env.APP_PORT}`);
-
+    console.log(chalk.greenBright(`🚀 Server running in port ${env.APP_PORT}`));
 })
