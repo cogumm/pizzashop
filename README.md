@@ -1,6 +1,25 @@
-# PizzaShop
+# 🍕 PizzaShop
+
+<p align="center">
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/cogumm/pizzashop?color=%2304D361">
+
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/cogumm/pizzashop">
+
+  <a href="https://github.com/cogumm/mylinux/commits/master">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/cogumm/pizzashop">
+  </a>
+
+  <a href="#memo-license">
+    <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen">
+  </a>
+
+   <a href="https://github.com/cogumm/pizzashop/stargazers">
+    <img alt="Stargazers" src="https://img.shields.io/github/stars/cogumm/pizzashop?style=social">
+  </a>
+</p>
 
 ## :information_source: What is the project ?
+
 PizzaShop is an open source application aimed at studying various technologies related to building APIs.
 
 Currently, the project focuses on implementing the following technologies
@@ -8,7 +27,7 @@ Currently, the project focuses on implementing the following technologies
   - Bun: A lightweight HTTP framework for Node.js.
   - TypeScript: A statically typed superset of JavaScript that enhances code quality and maintainability.
   - Drizzle: A data modeling library for TypeScript and JavaScript.
-  - Elysia: A library for managing asynchronous code with elegance.
+  - ElysiaJS: A library for managing asynchronous code with elegance.
   - PostgreSQL: A powerful open-source relational database system.
   - Zod: A TypeScript-first schema declaration and validation library.
   - Faker-js: A library for generating fake data such as names, addresses, and phone numbers.
