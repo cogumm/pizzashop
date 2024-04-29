@@ -8,7 +8,7 @@ import { eq } from 'drizzle-orm'
 
 export const authenticateFromLink = new Elysia().use(auth).get(
   '/auth-links/authenticate',
-  async ({ query, jwt, cookie: { auth }, set }) => {
+  async ({ query, signUser, set }) => {
     const { code, redirect } = query
 
     // Checking if the code is valid.
@@ -40,16 +40,10 @@ export const authenticateFromLink = new Elysia().use(auth).get(
     })
 
     // Signing the JWT.
-    const token = await jwt.sign({
+    await signUser({
       sub: authLinkFromCode.userId,
       restaurantId: managerRestaurant?.id,
     })
-
-    // Saving application cookie tokens.
-    auth.value = token
-    auth.httpOnly = true
-    auth.maxAge = 60 * 60 * 24 * env.APP_LINK_DAYS_EXPIRED_IN // in days
-    auth.path = '/'
 
     // If the authentication process went well, the link is deleted so that it cannot be reused.
     await db.delete(authLinks).where(eq(authLinks.code, code))
