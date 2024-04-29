@@ -5,6 +5,7 @@ const envSchema = z.object({
   APP_PORT: z.string().min(1),
   APP_AUTH_REDIRECT_URL: z.string().url().min(1),
   APP_JWT_SECRET_KEY: z.string().min(1),
+  APP_LINK_DAYS_EXPIRED_IN: z.coerce.number().int(),
   PG_USER: z.string().min(1),
   PG_PASSWORD: z.string().min(1),
   PG_DB: z.string().min(1),
