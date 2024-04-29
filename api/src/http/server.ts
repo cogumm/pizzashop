@@ -1,45 +1,11 @@
-import { Elysia, t } from 'elysia'
+import { Elysia } from 'elysia'
 import chalk from 'chalk'
 import { env } from '../env'
-import { db } from '../db/connection'
-import { restaurants, users } from '../db/schema'
+import { registerRestaurant } from './routes/register-restaurant'
+import { sendAuthLink } from './routes/send-auth-link'
 
 // Route restaurants
-const app = new Elysia().post(
-  '/restaurants',
-  async ({ body, set }) => {
-    const { restaurantName, description, managerName, email, phone } = body
-
-    const [manager] = await db
-      .insert(users)
-      .values({
-        name: managerName,
-        email,
-        phone,
-        role: 'manager',
-      })
-      .returning({
-        id: users.id,
-      })
-
-    await db.insert(restaurants).values({
-      name: restaurantName,
-      description,
-      managerId: manager.id,
-    })
-
-    set.status = 204
-  },
-  {
-    body: t.Object({
-      restaurantName: t.String(),
-      description: t.String(),
-      managerName: t.String(),
-      phone: t.String(),
-      email: t.String({ format: 'email' }),
-    }),
-  },
-)
+const app = new Elysia().use(registerRestaurant).use(sendAuthLink)
 
 app.listen(`${env.APP_PORT}`, () => {
   console.log(
